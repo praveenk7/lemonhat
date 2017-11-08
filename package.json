@@ -1,0 +1,34 @@
+{
+  "name": "lemonhat",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.0.50",
+    "concurrently": "^3.5.0",
+    "lite-server": "^2.3.0",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "@angular/common": "^4.4.6",
+    "@angular/compiler": "^4.4.6",
+    "@angular/core": "^4.4.6",
+    "@angular/forms": "^4.4.6",
+    "@angular/http": "^4.4.6",
+    "@angular/platform-browser": "^4.4.6",
+    "@angular/platform-browser-dynamic": "^4.4.6",
+    "@angular/router": "^4.4.6",
+    "core-js": "^2.5.1",
+    "rxjs": "^5.2.0",
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.18"
+  }
+}
