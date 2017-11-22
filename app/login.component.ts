@@ -8,7 +8,8 @@ declare const Twilio: any;
 @Component({
     moduleId: module.id,
     //selector: 'phone-verification',
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent { 
     constructor(
@@ -29,22 +30,15 @@ export class LoginComponent {
                     "countryCode": this.countryCode
                 }
             };
-            // this.twilioService.getPhoneVerificationToken(this.phone, this.countryCode).subscribe(
-            //     data=>{
-            //         this.router.navigate(['verifyphone'], navigationExtras);
-            //     }
-            // )
-            this.router.navigate(['verifyphone'], navigationExtras);
-            // new Fingerprint2().get((result, components) => {  
-            //     this.twilioService.getToken(this.name,result).subscribe(                    
-            //         data=>{
-            //             this.twilioToken=data._body;
-            //             this.client = new Twilio.Chat.Client(data._body, { logLevel: 'debug' }); 
-            //             this.twilioService.setTwilioClient(this.client);
-            //             this.router.navigate(['home']);
-            //         }                  
-            //    )
-            //   });
+             this.twilioService.getPhoneVerificationToken(this.phone, this.countryCode).subscribe(
+                 data=> {
+                     let response = JSON.parse(data._body);
+                     if (response.status == 200) {
+                         this.router.navigate(['verifyphone'], navigationExtras);
+                     }
+                 }
+             )
+            
         }
     }
 }

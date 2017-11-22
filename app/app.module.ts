@@ -12,7 +12,10 @@ import {User} from './user';
  import { AppComponent }  from './app.component';
  import { LoginComponent }  from './login.component';
  import { HomeComponent }  from './home.component';
- import{VerifyPhone} from './phone.verify.component';
+ import{VerifyPhone } from './phone.verify.component';
+import{ProfileComponent } from './profile.component';
+import{ ItemComponent } from './item.component';
+import { ShareComponent } from './share.component';
 
 @NgModule({
     imports: [
@@ -25,7 +28,10 @@ import {User} from './user';
         AppComponent,
         LoginComponent,
         VerifyPhone,
-        HomeComponent     
+        HomeComponent,
+        ItemComponent,
+        ShareComponent,
+        ProfileComponent     
     ],
     providers: [ 
         TwilioService,
